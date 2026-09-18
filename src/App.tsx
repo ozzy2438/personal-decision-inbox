@@ -5,9 +5,11 @@ import { LogPage } from "./pages/LogPage";
 import { QueuePage } from "./pages/QueuePage";
 import { SettingsPage } from "./pages/SettingsPage";
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <InboxProvider>
         <Routes>
           <Route element={<AppShell />}>
